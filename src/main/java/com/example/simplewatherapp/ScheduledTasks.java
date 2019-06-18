@@ -13,20 +13,17 @@ import java.net.URISyntaxException;
 @Component
 public class ScheduledTasks {
 
+    private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
+
     @Autowired
     WeatherService weatherService;
-
-    private static final Logger log = LoggerFactory.getLogger(ScheduledTasks.class);
     CurrentWeather currentWeather;
-
 
     @Scheduled(fixedDelay = 3000)
     public void printWeather() throws URISyntaxException {
         currentWeather = weatherService.getCurrentWeather();
         log.info(String.valueOf(currentWeather.getCoord().getLat()));
         log.info(String.valueOf(currentWeather.getCoord().getLon()));
-
-
 
     }
 }
