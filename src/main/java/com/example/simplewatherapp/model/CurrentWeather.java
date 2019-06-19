@@ -1,10 +1,10 @@
 package com.example.simplewatherapp.model;
 
-import java.io.Serializable;
+import java.util.List;
 
 public class CurrentWeather{
     private Coord coord;
-    private Weather weather;
+    private List<Weather> weather;
     private String base;
     private Main main;
     private long visibility;
@@ -20,7 +20,7 @@ public class CurrentWeather{
     public CurrentWeather() {
     }
 
-    public CurrentWeather(Coord coord, Weather weather, String base, Main main, long visibility, Wind wind, Clouds clouds, long dt, Sys sys, long timezone, long id, String name, long cod) {
+    public CurrentWeather(Coord coord, List<Weather> weather, String base, Main main, long visibility, Wind wind, Clouds clouds, long dt, Sys sys, long timezone, long id, String name, long cod) {
         this.coord = coord;
         this.weather = weather;
         this.base = base;
@@ -132,11 +132,11 @@ public class CurrentWeather{
         this.coord = coord;
     }
 
-    public Weather getWeather() {
+    public List<Weather> getWeather() {
         return weather;
     }
 
-    public void setWeather(Weather weather) {
+    public void setWeather(List<Weather> weather) {
         this.weather = weather;
     }
 }

@@ -1,34 +1,30 @@
 package com.example.simplewatherapp;
 
 import com.example.simplewatherapp.model.CurrentWeather;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriTemplate;
 
-
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
 
 @Service
 public class WeatherService {
 
-    private final String BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q=Wroclaw&APPID=e2544ee568ddfe551f1d63790dc8fcbb";
-    //private final String APP_ID = "e2544ee568ddfe551f1d63790dc8fcbb";
 
-   // private String country = "POLAND";
-    //private String city = "Wroclaw";
+    @Value("${api.url}")
+    private String BASE_URL;
 
-    WeatherService(){
+    @Value("${api.key}")
+    private String APP_ID;
 
-    }
+    @Value("${api.city}")
+    private String CITY;
 
-    public CurrentWeather getCurrentWeather() throws URISyntaxException {
+    public CurrentWeather getCurrentWeather() {
         RestTemplate restTemplate = new RestTemplate();
-        URI currentWheatherUrl = new URI(BASE_URL);
-        CurrentWeather currentWeather = restTemplate.getForObject(currentWheatherUrl,CurrentWeather.class);
-        return currentWeather;
+        URI currentWheatherUrl = new UriTemplate(BASE_URL).expand(CITY, APP_ID);
+        return restTemplate.getForObject(currentWheatherUrl,CurrentWeather.class);
     }
 
 
