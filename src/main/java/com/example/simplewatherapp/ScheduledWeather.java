@@ -64,7 +64,7 @@ public class ScheduledWeather {
         log.info(firstWeatherLog);
     }
 
-    @Scheduled(fixedDelay = 60000)
+    @Scheduled(fixedDelay = 3600000)
     public void nextLinesScheduledWeatherWriter() {
         currentWeather = weatherService.getCurrentWeather();
         String weatherLog = String.format("%s %s %s %s %s \n",
