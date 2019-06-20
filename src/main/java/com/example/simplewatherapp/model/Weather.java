@@ -1,8 +1,5 @@
 package com.example.simplewatherapp.model;
 
-import java.io.Serializable;
-import java.util.List;
-
 public class Weather {
 
     private long id;

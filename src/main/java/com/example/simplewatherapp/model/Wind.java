@@ -1,8 +1,7 @@
 package com.example.simplewatherapp.model;
 
-import java.io.Serializable;
-
 public class Wind {
+
     private long speed;
     private long deg;
 

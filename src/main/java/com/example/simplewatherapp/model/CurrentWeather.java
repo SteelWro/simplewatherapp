@@ -3,6 +3,7 @@ package com.example.simplewatherapp.model;
 import java.util.List;
 
 public class CurrentWeather{
+
     private Coord coord;
     private List<Weather> weather;
     private String base;

@@ -1,8 +1,7 @@
 package com.example.simplewatherapp.model;
 
-import java.io.Serializable;
-
 public class Sys {
+
     private long type;
     private long id;
     private long message;

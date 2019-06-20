@@ -1,8 +1,7 @@
 package com.example.simplewatherapp.model;
 
-import java.io.Serializable;
-
 public class Main{
+
     private float temp;
     private long pressure;
     private long humidity;

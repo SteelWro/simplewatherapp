@@ -1,8 +1,7 @@
 package com.example.simplewatherapp.model;
 
-import java.io.Serializable;
+public class Clouds {
 
-public class Clouds{
     private long all;
 
     public Clouds() {
