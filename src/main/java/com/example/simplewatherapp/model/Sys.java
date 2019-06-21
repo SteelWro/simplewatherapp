@@ -3,6 +3,7 @@ package com.example.simplewatherapp.model;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.TimeZone;
 
 public class Sys {
@@ -58,18 +59,18 @@ public class Sys {
         this.country = country;
     }
 
-    public LocalTime getSunrise() {
+    public String getSunrise() {
         return LocalDateTime
-                .ofInstant(Instant.ofEpochMilli(sunrise * 1000), TimeZone.getTimeZone("UTC").toZoneId()).toLocalTime();
+                .ofInstant(Instant.ofEpochMilli(sunrise * 1000), TimeZone.getTimeZone("UTC").toZoneId()).toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm"));
     }
 
     public void setSunrise(long sunrise) {
         this.sunrise = sunrise;
     }
 
-    public LocalTime getSunset() {
+    public String getSunset() {
         return LocalDateTime
-                .ofInstant(Instant.ofEpochMilli(sunset * 1000), TimeZone.getTimeZone("UTC").toZoneId()).toLocalTime();
+                .ofInstant(Instant.ofEpochMilli(sunset * 1000), TimeZone.getTimeZone("UTC").toZoneId()).toLocalTime().format(DateTimeFormatter.ofPattern("HH:mm"));
     }
 
     public void setSunset(long sunset) {

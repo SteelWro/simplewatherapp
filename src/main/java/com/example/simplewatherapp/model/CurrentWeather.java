@@ -146,7 +146,7 @@ public class CurrentWeather{
     @Override
     public String toString(){
         return String.format("%s %s %s %s %s",
-                LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-mm-yy")),
+                LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")),
                 this.getMain().getTemp(),
                 this.getMain().getHumidity(),
                 this.getMain().getPressure(),
