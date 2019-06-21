@@ -1,5 +1,7 @@
 package com.example.simplewatherapp.model;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class CurrentWeather{
@@ -140,4 +142,20 @@ public class CurrentWeather{
     public void setWeather(List<Weather> weather) {
         this.weather = weather;
     }
+
+    @Override
+    public String toString(){
+        return String.format("%s %s %s %s %s",
+                LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-mm-yy")),
+                this.getMain().getTemp(),
+                this.getMain().getHumidity(),
+                this.getMain().getPressure(),
+                this.getWind().getSpeed());
+    }
+
+    public String firstLine() {
+        return String.format("%s %s %s", this.getName(), this.getSys().getSunrise(), this.getSys().getSunset());
+    }
+
+
 }

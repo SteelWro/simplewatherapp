@@ -1,5 +1,10 @@
 package com.example.simplewatherapp.model;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.TimeZone;
+
 public class Sys {
 
     private long type;
@@ -53,16 +58,18 @@ public class Sys {
         this.country = country;
     }
 
-    public long getSunrise() {
-        return sunrise;
+    public LocalTime getSunrise() {
+        return LocalDateTime
+                .ofInstant(Instant.ofEpochMilli(sunrise * 1000), TimeZone.getTimeZone("UTC").toZoneId()).toLocalTime();
     }
 
     public void setSunrise(long sunrise) {
         this.sunrise = sunrise;
     }
 
-    public long getSunset() {
-        return sunset;
+    public LocalTime getSunset() {
+        return LocalDateTime
+                .ofInstant(Instant.ofEpochMilli(sunset * 1000), TimeZone.getTimeZone("UTC").toZoneId()).toLocalTime();
     }
 
     public void setSunset(long sunset) {
