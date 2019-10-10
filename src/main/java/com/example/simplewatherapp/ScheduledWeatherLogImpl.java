@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 
 @Service
-public class ScheduledWeatherImpl implements ScheduledWeather{
+public class ScheduledWeatherLogImpl implements ScheduledWeatherLog {
 
-    private static final Logger log = LoggerFactory.getLogger(ScheduledWeather.class);
+    private static final Logger log = LoggerFactory.getLogger(ScheduledWeatherLog.class);
 
     WeatherService weatherService;
     CurrentWeather currentWeather;
@@ -24,7 +24,7 @@ public class ScheduledWeatherImpl implements ScheduledWeather{
     FileOutputStream fos;
 
     @Autowired
-    public ScheduledWeatherImpl(WeatherService weatherService) {
+    public ScheduledWeatherLogImpl(WeatherService weatherService) {
         this.weatherService = weatherService;
     }
 

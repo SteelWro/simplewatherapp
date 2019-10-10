@@ -1,6 +1,6 @@
 package com.example.simplewatherapp;
 
-public interface ScheduledWeather {
+public interface ScheduledWeatherLog {
     void nextLinesScheduledWeatherWriter();
     void firstLineWriter();
 
