@@ -9,8 +9,7 @@ technologie:
 - Thymeleaf
 - OpenWeatherMap API (https://openweathermap.org/api)
 
-funkcje:
-aplikacja pokazuje aktualne dane pogodowe dla Wrocławia:
+ Aplikacja pokazuje aktualne dane pogodowe dla Wrocławia:
   - temperaturę
   - datę
   - dzień tygodnia
