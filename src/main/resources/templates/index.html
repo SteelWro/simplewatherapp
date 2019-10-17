@@ -36,7 +36,7 @@
                 <div class="degree">
                     <div class="num"><span th:text="${currentWeather.getMain().getTemp()}"></span><sup>o</sup>C</div>
                     <div class="forecast-icon">
-                        <img th:src="${'http://openweathermap.org/img/w/' + currentWeather.getWeather().get(0).getIcon() + '.png'}" alt="weatherIcon" width=90>
+                        <img class="icon_weather" th:src="${'http://openweathermap.org/img/w/' + currentWeather.getWeather().get(0).getIcon() + '.png'}" alt="weatherIcon" width=90>
                     </div>	
                 </div>
                 <span><img th:src="@{images/icon-umberella.png}" alt=""><span th:text="${currentWeather.getMain().getHumidity() + ' %'}"></span></span>

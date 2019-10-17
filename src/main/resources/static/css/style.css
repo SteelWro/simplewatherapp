@@ -279,6 +279,12 @@
      display: block;
      overflow: hidden;
      height: 0; }
+   @media(max-width: 450px){
+       .num{
+           font-size: 60px !important;
+       }
+
+   }
    @media (min-width: 768px) {
      .container {
        width: 750px; } }
@@ -1284,14 +1290,17 @@
          font-size: 6.4285714286rem;
          margin-right: 30px; }
        .forecast-container .forecast.today span {
-         margin-right: 20px; }
+         margin-right: 10px;}
          .forecast-container .forecast.today span img {
-           margin-right: 5px;
+           margin-right: 3px;
            vertical-align: middle; }
        @media screen and (max-width: 990px) {
          .forecast-container .forecast.today {
            display: block;
            width: 100%; } }
+        .icon_weather{
+            margin-bottom: 10px;
+        }
      .forecast-container .forecast .forecast-header {
        background: rgba(0, 0, 0, 0.1);
        padding: 10px;
