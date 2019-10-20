@@ -28,7 +28,7 @@ public class ScheduledWeatherLogImpl implements ScheduledWeatherLog {
         this.weatherService = weatherService;
     }
 
-    @EventListener(ContextRefreshedEvent.class)
+    // @EventListener(ContextRefreshedEvent.class)
     public void firstLineWriter() {
         currentWeather = weatherService.getCurrentWeather();
 
@@ -44,7 +44,7 @@ public class ScheduledWeatherLogImpl implements ScheduledWeatherLog {
         }
     }
 
-    @Scheduled(fixedDelay = 3600000)
+    //@Scheduled(fixedDelay = 3600000)
     public void nextLinesScheduledWeatherWriter() {
         currentWeather = weatherService.getCurrentWeather();
 
