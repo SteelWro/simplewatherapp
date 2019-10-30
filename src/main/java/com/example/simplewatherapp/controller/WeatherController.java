@@ -1,6 +1,5 @@
 package com.example.simplewatherapp.controller;
 
-import com.example.simplewatherapp.ScheduledWeatherLog;
 import com.example.simplewatherapp.service.WeatherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,16 +16,19 @@ public class WeatherController {
     private static final Logger log = LoggerFactory.getLogger(WeatherController.class);
     WeatherService weatherService;
 
+
     @Autowired
     public WeatherController(WeatherService weatherService) {
         this.weatherService = weatherService;
     }
 
-    @GetMapping("/weather")
+    @GetMapping("/")
     public String getWeather(Model model) {
+        LocalDateTime localDateTime = LocalDateTime.now();
         model.addAttribute("currentWeather", weatherService.getCurrentWeather());
-        model.addAttribute("time", LocalDateTime.now());
+        model.addAttribute("time", localDateTime);
         log.info("request weather attempt success");
         return "index";
     }
+
 }
