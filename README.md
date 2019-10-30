@@ -1,7 +1,7 @@
 Prosta aplikacja webowa pokazująca aktualną pogodę z wykorzystaniem OpenWeatherApi
 
 Aplikacja dostępna publicznie na moim serwerze pod adresem
-http://77.55.218.33:8086/weather
+http://77.55.218.33:8086
 
 technologie:
 - Java
